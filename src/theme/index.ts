@@ -37,5 +37,35 @@ export const finalTheme = createTheme(theme, {
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputLabel-root": {
+            position: "static",
+            transform: "none",
+            marginBottom: "8px",
+          },
+          "& .MuiInputLabel-shrink": {
+            transform: "none",
+          },
+          "& .MuiOutlinedInput-root": {
+            borderRadius: 12,
+            "& fieldset": {
+              // border: "none",
+              borderRadius: 12,
+            },
+            "&.Mui-active fieldset": {
+              borderColor: "inherit",
+            },
+            "&:hover fieldset": {
+              borderColor: "inherit",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "inherit",
+            },
+          },
+        },
+      },
+    },
   },
 });
