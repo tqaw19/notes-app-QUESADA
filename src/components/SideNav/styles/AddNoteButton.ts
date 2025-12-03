@@ -7,7 +7,8 @@ export const addNoteButtonSX = (color: string): SxProps<Theme> => ({
   width: color ? "30px" : "50px",
   height: color ? "30px" : "50px",
   minWidth: color ? "30px" : "50px",
-  borderRadius: (theme) => theme.spacing(10),
+  padding: 0,
+  borderRadius: "50%",
   backgroundColor: color || undefined,
 
   "&.MuiButton-contained": {
