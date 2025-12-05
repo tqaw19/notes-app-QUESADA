@@ -12,6 +12,7 @@ import {
   newPostItCardActionsSX,
   newPostItCardActionSX,
   newPostItCardContainerSX,
+  newPostItCardContentSX,
 } from "./styles/newPostItCard";
 import { usePostItContext } from "@context/usePostItContext";
 import type { PostIt } from "@types";
@@ -40,11 +41,13 @@ export const NewPostItCard = () => {
 
   const card = (
     <>
-      <CardContent>
+      <CardContent sx={newPostItCardContentSX}>
         <TextField
           id="outlined-multiline-static"
+          placeholder="Enter your ideas..."
           fullWidth
           multiline
+          autoFocus={true}
           rows={6}
           value={postItValue.body || ""}
           onChange={(e) =>
