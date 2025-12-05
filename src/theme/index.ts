@@ -11,6 +11,7 @@ const base = {
     blue: "#67e8f9",
     purple: "#be9efc",
     black: "#111827",
+    grayDark: "#384251",
     gray: "#9199a7",
     grayLight: "#f7f8fc",
   },
@@ -31,6 +32,13 @@ export const finalTheme = createTheme(theme, {
         contained: {
           backgroundColor: theme.customPalette.black,
           color: theme.palette.primary.contrastText,
+          "&:active": {
+            transform: "scale(0.98)",
+          },
+        },
+        outlined: {
+          borderColor: theme.customPalette.gray,
+          color: theme.customPalette.black,
           "&:active": {
             transform: "scale(0.98)",
           },

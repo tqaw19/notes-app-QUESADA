@@ -1,6 +1,7 @@
 import React from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchOutlined from "@mui/icons-material/SearchOutlined";
+import { searchInputSX } from "./styles/SearchInput";
 
 interface SearchInputProps {
   searchValue: string;
@@ -12,6 +13,7 @@ export const SearchInput = () => {
       placeholder="Search"
       variant="outlined"
       fullWidth
+      sx={searchInputSX}
       slotProps={{
         input: {
           startAdornment: (

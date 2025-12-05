@@ -1,16 +1,13 @@
 import type { SxProps, Theme } from "@mui/material";
 
-export const dashboardPageContainerSX: SxProps<Theme> = (theme: Theme) => ({
+export const editNotePageContainerSX: SxProps<Theme> = (theme: Theme) => ({
   paddingInline: theme.spacing(6),
   paddingBlock: theme.spacing(4),
 
-  ".search-input-container": {
-    marginBottom: theme.spacing(4),
-  },
-
   ".page-title-container": {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: theme.spacing(4),
   },
-
-  ".post-it-list-container": {},
 });

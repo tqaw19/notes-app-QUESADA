@@ -14,7 +14,10 @@
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@utils/*": ["utils/*"],
-      "@theme/*": ["theme/*"]
+      "@theme/*": ["theme/*"],
+      "@context/*": ["context/*"],
+      "@types": ["types/index"],
+      "@types/*": ["types/*"]
     },
 
     /* Bundler mode */
