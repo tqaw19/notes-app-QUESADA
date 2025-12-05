@@ -35,19 +35,30 @@ export function usePostItState() {
   }, [postItState]);
 
   const actions = {
-    addPostIt: useCallback((body: string, bgColor: string) => {
-      const newPostIt = {
-        id: String(Date.now()),
-        body: body.trim(),
-        bgColor,
-        createdAt: new Date().toISOString(),
-      };
+    addPostIt: useCallback(
+      (body: string, bgColor: string, onSaved?: () => void) => {
+        const newPostIt = {
+          id: String(Date.now()),
+          body: body.trim(),
+          bgColor,
+          createdAt: new Date().toISOString(),
+        };
 
-      setPostItState((prev) => ({
-        ...prev,
-        postsItList: [...prev.postsItList, newPostIt],
-      }));
-    }, []),
+        setPostItState((prev) => {
+          const updated = {
+            ...prev,
+            postsItList: [newPostIt, ...prev.postsItList],
+          };
+
+          requestAnimationFrame(() => {
+            if (onSaved) onSaved();
+          });
+
+          return updated;
+        });
+      },
+      []
+    ),
 
     deletePostIt: useCallback((id: string) => {
       setPostItState((prev) => ({
