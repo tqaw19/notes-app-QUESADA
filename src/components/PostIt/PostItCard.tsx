@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   Box,
   Button,
@@ -9,12 +9,12 @@ import {
 } from "@mui/material";
 import CreateIcon from "@mui/icons-material/Create";
 import { useNavigate } from "react-router";
-import { format } from "date-fns";
 import {
   postItCardActionsSX,
   postItCardContainerSX,
   postItCardSaveButtonSX,
 } from "./styles/PostItCard";
+import { formatPostItDate } from "@utils/formatPostItDate";
 
 interface PostItCardProps {
   id: string;
@@ -35,7 +35,7 @@ export const PostItCard: React.FC<PostItCardProps> = ({
     navigate(`/notes/${id ?? "123"}/edit`);
   };
 
-  const formattedDate = format(new Date(createdAt), "MMMM d, yyyy");
+  const formattedDate = useMemo(() => formatPostItDate(createdAt), [createdAt]);
 
   const card = (
     <>

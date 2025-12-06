@@ -9,5 +9,11 @@ export const editNotePageContainerSX: SxProps<Theme> = (theme: Theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: theme.spacing(4),
+
+    ".save-edit-post-it-button": {
+      borderRadius: theme.spacing(1),
+      textTransform: "none",
+      fontWeight: 700,
+    },
   },
 });
